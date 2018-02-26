@@ -3,7 +3,6 @@ const yt = require('ytdl-core');
 const tokens = require('./tokens.json');
 const search = require('youtube-search');
 const thing = require('mathjs');
-const fileAuth = new Configs("auth");
 const client = new Client();
 
 let playlist = {};
