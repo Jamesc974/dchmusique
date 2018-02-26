@@ -1,7 +1,6 @@
 const { Client } = require('discord.js');
 const yt = require('ytdl-core');
 const tokens = require('./tokens.json');
-const search = require('youtube-search');
 const client = new Client();
 
 let playlist = {};
