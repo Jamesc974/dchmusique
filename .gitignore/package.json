@@ -10,7 +10,7 @@
   "dependencies": {
     "discord.js": "^11.0.0",
     "node-opus": "^0.2.1",
-    "ffmpeg": "0.0.4",
+    "ffmpeg": "3.4.2",
     "ytdl-core": "github:fent/node-ytdl-core#master"
   },
   "author": "DCH/TarKyo",
