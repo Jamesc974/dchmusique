@@ -1,7 +1,7 @@
 const { Client } = require('discord.js');
 const yt = require('ytdl-core');
 const tokens = require('./tokens.json');
-const FFMPEG = require('ffmpeg');
+const FFMPEG = require('ffmpeg-binaries');
 const client = new Client();
 
 let playlist = {};
