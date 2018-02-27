@@ -11,7 +11,8 @@
     "discord.js": "^11.0.0",
     "node-opus": "^0.2.1",
     "ffmpeg": "0.0.4",
-    "ytdl-core": "^0.7.24"
+    "ytdl-core": "^0.7.24",
+    "request": "^2.79.0"
   },
   "author": "DCH/TarKyo",
   "license": "MIT"
