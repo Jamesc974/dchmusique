@@ -91,7 +91,7 @@ const commands = {
 client.on("ready", () => {
   console.log(`Game OK!`)
   client.user.setStatus('Online')
-  client.user.setGame('[!adminbot]')
+  client.user.setGame('[!dchbot]')
 
 });
 
