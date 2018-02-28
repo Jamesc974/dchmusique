@@ -90,8 +90,7 @@ const commands = {
 
 client.on("ready", () => {
   console.log(`Game OK!`)
-  client.user.setStatus('Online')
-  client.user.setGame('[!dchbot]')
+  client.user.setPresence({ game: { name: '[!dchbot]'}})
 
 });
 
