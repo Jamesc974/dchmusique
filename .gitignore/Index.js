@@ -88,6 +88,13 @@ const commands = {
 	}
 };
 
+client.on("ready", () => {
+  console.log(`Game OK!`)
+  client.user.setStatus('Online')
+  client.user.setGame('[!adminbot]')
+
+});
+
 client.on('ready', () => {
 	console.log('Bot Musique Prés pour utilisation');
 });
