@@ -90,7 +90,7 @@ const commands = {
 
 client.on("ready", async () => {
   console.log(`${bot.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
-  client.user.setPresence({ game: { name: `[!dchbot] || connecté à ${client.guilds.size} || créé par TarKyo et DCH`}})
+  client.user.setPresence({ game: { name: `[!dchbot] || connecté à ${client.guilds.size} serveur || créé par TarKyo et DCH`}})
 
 });
 
