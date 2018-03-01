@@ -88,7 +88,7 @@ const commands = {
 	}
 };
 
-client.on("ready", async () => {
+client.on("ready", () => {
   console.log(`${bot.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
   client.user.setPresence({ game: { name: `[!dchbot] || connecté à ${client.guilds.size} serveur || créé par TarKyo et DCH`}})
 
