@@ -23,8 +23,7 @@ const commands = {
 				msg.member.voiceChannel.leave();
 			});
 			msg.channel.sendMessage(`:arrow_forward: Lecture de: **${song.title}** Par: **${song.requester}**`);
-			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });
-			let collector = msg.channel.createCollector(m => m);
+			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });			let collector = msg.channel.createCollector(m => m);
 			collector.on('message', m => {
 				if (m.content.startsWith(tokens.prefix + 'pause')) {
 					msg.channel.sendMessage(':pause_button: Musique mis sur **Pause**').then(() => {dispatcher.pause();});
@@ -90,7 +89,7 @@ const commands = {
 
 client.on("ready", () => {
   console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
-  client.user.setPresence({ game: { name: `!dchbot | connecté à ${client.guilds.size} serveur(s) | by DCH`}})
+  client.user.setPresence({ game: { name: `!dchbot | connecté à ${client.guilds.size} serveurs | by DCH`}})
 
 });
 
