@@ -22,7 +22,7 @@ const commands = {
 				playlist[msg.guild.id].playing = false;
 				msg.member.voiceChannel.leave();
 			});
-			msg.channel.sendMessage(`:arrow_forward: Lecture de: **${song.title}** Par: **${song.requester}**`);
+			msg.channel.sendMessage(":arrow_forward: Lecture de: "  + '`' + song.title + '`' + `:notes: Par: **${song.requester}**`);
 			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });			let collector = msg.channel.createCollector(m => m);
 			collector.on('message', m => {
 				if (m.content.startsWith(tokens.prefix + 'pause')) {
@@ -67,6 +67,7 @@ const commands = {
 		if (url == '' || url === undefined) return msg.channel.sendMessage(`Vous devez ajouter une vidéo YouTube ou id faite ${tokens.prefix}add`);
 		yt.getInfo(url, (err, info) => {
 			if(err) return msg.channel.sendMessage(':x: Lien Youtube Invalide: ' + err);
+			msg.channel.sendMessage(":film_frames: **Recherche** :mag_right: " + '`'+ url +'`')
 			if (!playlist.hasOwnProperty(msg.guild.id)) playlist[msg.guild.id] = {}, playlist[msg.guild.id].playing = false, playlist[msg.guild.id].songs = [];
 			playlist[msg.guild.id].songs.push({url: url, title: info.title, requester: msg.author.username});
 			msg.channel.sendMessage(`:white_check_mark: Ajout de **${info.title}** à la playlist`);
@@ -76,7 +77,7 @@ const commands = {
 		if (playlist[msg.guild.id] === undefined) return msg.channel.sendMessage(`:white_check_mark: Ajoutez quelques chansons à la file d'attente d'abord avec ${tokens.prefix}add`);
 		let tosend = [];
 		playlist[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Par: ${song.requester}`);});
-		msg.channel.sendMessage(`:repeat: __**${msg.guild.name}'s Playlist:**__ Actuellement **${tosend.length}** Musique juste aprés ${(tosend.length > 15 ? '*[Seulement ensuite 15 montré]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
+		msg.channel.sendMessage(`:repeat: __**${msg.guild.name} Playlist :**__ Actuellement **${tosend.length}** Musique juste aprés ${(tosend.length > 15 ? '*[Seulement ensuite 15 montré]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
 	},
 	'dchbot': (msg) => {
 		let tosend = ['```xl', tokens.prefix + 'join : "Pour qu\'il join votre channel"',	tokens.prefix + 'add : "Ajoutez un lien youtube valable à la PlayList"', tokens.prefix + 'playlist : "Montre la file playlist, jusqu\'à 15 chansons montrées."', tokens.prefix + 'play : "Jouez la playList (ATTENTION le bot doit etre dans le channel)"', '', 'Les commandes suivantes fonctionnent seulement si le bot fonctionne :'.toUpperCase(), tokens.prefix + 'pause : "Mettre en pause la musique / arrêter la musique"',	tokens.prefix + 'resume : "Reprend la musique"', tokens.prefix + 'skip : "Changer de Musique"', tokens.prefix + 'time : "Montre la temps de la chanson."',	'volume+(+++) : "Augmente le volume à 2%/+"',	'volume-(---) : "Baisser le volume à 2%/-"',	'```'];
