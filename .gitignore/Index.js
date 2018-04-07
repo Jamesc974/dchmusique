@@ -3,7 +3,7 @@ const yt = require('ytdl-core');
 const ffmpeg = require('ffmpeg');
 const request = require("request");
 const tokens = require('./tokens.json');
-const client = new Discord.Client({disableEveryone: true});
+const client = new Client();
 
 let playlist = {};
 
