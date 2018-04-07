@@ -2,7 +2,6 @@ const { Client } = require('discord.js');
 const yt = require('ytdl-core');
 const ffmpeg = require('ffmpeg');
 const tokens = require('./tokens.json');
-const request = require("request");
 const client = new Client();
 prefix = tokens.prefix;
 
@@ -103,4 +102,5 @@ client.on('message', msg => {
 	if (!msg.content.startsWith(tokens.prefix)) return;
 	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0]](msg);
 });
+
 client.login(process.env.TOKEN);
