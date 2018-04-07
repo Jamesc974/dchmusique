@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "discord.js" : "11.0.0",
-    "ffmepg": "0.0.2-security",
+    "ffmpeg": "0.0.4",
     "ytdl-core" :  "github:fent/node-ytdl-core#master",
     "node-opus" : "^0.2.1",
     "forever": "^0.15.3",
