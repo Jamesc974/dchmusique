@@ -1,5 +1,6 @@
 const { Client } = require('discord.js');
 const yt = require('ytdl-core');
+const ffmpeg = require('ffmpeg');
 const tokens = require('./tokens.json');
 const request = require("request");
 const client = new Client();
