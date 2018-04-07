@@ -1,3 +1,4 @@
+
 {
   "name": "dchmusique",
   "version": "1.0.0",
@@ -12,6 +13,7 @@
     "ffmpeg": "0.0.4",
     "forever": "^0.15.3",
     "node-opus": "^0.2.1",
+    "request": "^2.85.0",
     "opusscript": "0.0.6",
     "ytdl-core": "github:fent/node-ytdl-core#master"
   },
