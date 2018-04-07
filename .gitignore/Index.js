@@ -1,8 +1,9 @@
-const { Client } = require('discord.js');
+const Discord = require('discord.js');
 const yt = require('ytdl-core');
-const ffmpeg = require('ffmpeg');
 const tokens = require('./tokens.json');
-const client = new Client();
+const ffmpeg = require('ffmpeg');
+const request = require("request");
+const client = new Discord.Client({disableEveryone: true});
 prefix = tokens.prefix;
 
 let playlist = {};
