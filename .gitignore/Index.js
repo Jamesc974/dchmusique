@@ -91,7 +91,7 @@ const commands = {
 	}
 };
 
-client.on("ready", async () => {
+client.on('ready', async () => {
   console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
   client.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} | by TarKyo`}})
 
