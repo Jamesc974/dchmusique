@@ -8,6 +8,12 @@ prefix = tokens.prefix;
 
 let playlist = {};
 
+client.on("ready", async () => {
+	console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
+	client.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} serveurs | by TarKyo`}})
+
+});
+
 const commands = {
 	'play': (msg) => {
 		if (playlist[msg.guild.id] === undefined) return msg.channel.sendMessage(`Ajoutez quelques chansons à la file d'attente d'abord avec ${tokens.prefix}add`);
@@ -90,12 +96,6 @@ const commands = {
 		if (msg.author.id == tokens.adminID) process.exit(); //Requires a node module like Forever to work.
 	}
 };
-
-client.on('ready', async () => {
-  console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
-  client.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} | by TarKyo`}})
-
-});
 
 client.on('message', msg => {
 	if (!msg.content.startsWith(tokens.prefix)) return;
