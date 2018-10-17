@@ -91,11 +91,10 @@ const commands = {
 	}
 };
 
-client.on('ready', () => {
-   console.log('Bot Musique Prés pour utilisation');
-   console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
-   client.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} | by TarKyo`}})
-	
+client.on("ready", async () => {
+  console.log(`${bot.user.username} est en ligne sur ${bot.guilds.size} serveurs!`);
+  bot.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} | by TarKyo`}})
+
 });
 
 client.on('message', msg => {
