@@ -82,7 +82,7 @@ const commands = {
 		playlist[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Par: ${song.requester}`);});
 		msg.channel.sendMessage(`:repeat: __**${msg.guild.name} Playlist :**__ Actuellement **${tosend.length}** Musique juste aprés ${(tosend.length > 15 ? '*[Seulement ensuite 15 montré]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
 	},
-	'dchbot': (msg) => {
+	'fm': (msg) => {
 		let tosend = ['```xl', tokens.prefix + 'join : "Pour qu\'il join votre channel"',	tokens.prefix + 'add : "Ajoutez un lien youtube valable à la PlayList"', tokens.prefix + 'playlist : "Montre la file playlist, jusqu\'à 15 chansons montrées."', tokens.prefix + 'play : "Jouez la playList (ATTENTION le bot doit etre dans le channel)"', '', 'Les commandes suivantes fonctionnent seulement si le bot fonctionne :'.toUpperCase(), tokens.prefix + 'pause : "Mettre en pause la musique / arrêter la musique"',	tokens.prefix + 'resume : "Reprend la musique"', tokens.prefix + 'skip : "Changer de Musique"', tokens.prefix + 'time : "Montre la temps de la chanson."',	'volume+(+++) : "Augmente le volume à 2%/+"',	'volume-(---) : "Baisser le volume à 2%/-"',	'```'];
 		msg.channel.sendMessage(tosend.join('\n'));
 	},
@@ -91,14 +91,11 @@ const commands = {
 	}
 };
 
-client.on("ready", () => {
-  console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
-  client.user.setPresence({ game: { name: `!dchbot | connecté à ${client.guilds.size} serveurs | by DCH`}})
-
-});
-
 client.on('ready', () => {
-	console.log('Bot Musique Prés pour utilisation');
+   console.log('Bot Musique Prés pour utilisation');
+   console.log(`${client.user.username} est en ligne sur ${client.guilds.size} serveurs!`);
+   client.user.setPresence({ game: { name: `!fm | connecté à ${client.guilds.size} | by TarKyo`}})
+	
 });
 
 client.on('message', msg => {
