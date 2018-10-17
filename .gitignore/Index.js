@@ -28,6 +28,8 @@ const commands = {
 			collector.on('message', m => {
 				if (m.content.startsWith(tokens.prefix + 'pause')) {
 					msg.channel.sendMessage(':pause_button: Musique mis sur **Pause**').then(() => {dispatcher.pause();});
+				} else if (m.content.startsWith(tokens.prefix + 'stop')){
+					msg.channel.sendMessage(':pause_button: Musique **Arreté**').then(() => {dispatcher.stop();});
 				} else if (m.content.startsWith(tokens.prefix + 'resume')){
 					msg.channel.sendMessage(':arrow_forward: Relancement de la musique').then(() => {dispatcher.resume();});
 				} else if (m.content.startsWith(tokens.prefix + 'skip')){
